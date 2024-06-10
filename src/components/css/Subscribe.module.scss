@@ -1,6 +1,9 @@
 .footerContact {
   background-color: var(--secondary-300);
   padding: 3rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .footerContactContent {
     background-color: var(--primary-300);
@@ -25,7 +28,7 @@
         border: none;
         background: #fff;
         height: 48px;
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 2px 12px 10px rgba(0, 0, 0, 0.05);
         border-radius: 8px;
         padding: 10px;
 
@@ -59,5 +62,10 @@
         }
       } 
     }
+  }
+
+  .footerContactImage {
+    width: 60%;
+    margin: -60px auto 0;
   }
 }
