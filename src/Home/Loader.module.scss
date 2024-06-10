@@ -1,0 +1,19 @@
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(166.95deg, #a9d99f 9.41%, #406614 93.81%);
+
+  .logo {
+    width: 25%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .para {
+    margin-top: 1rem;
+    font-family: var(--averia);
+    color: var(--white);
+  }
+}

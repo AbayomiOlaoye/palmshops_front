@@ -1,13 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Colour */
+  --black: #000;
+  --white: #fff;
+  --primary-300: #a9d99f;
+  --primary-400: #98d18d;
+  --primary-700: #598d50;
+  --primary-900: #35532f;
+  --text--grey: #606060;
+  --text--dark: #333232;
+  --palm: #c3ee00;
+  --menu: #f9f9f9;
+  --background: #0a562b;
+  --secondary-200: #f7f5e4;
+  --secondary-300: #f3f0d7;
+  --gray-900: #42423a;
+
+  /* Fonts & Sizes */
+  --inter: 'Inter';
+  --montserrat: 'Montserrat', sans-serif;
+
+  /* Gradient */
+  --gradient: linear-gradient(90deg, #7ec670 0%, #dcc15f 100%);
+
+  /* Width */
+  --w--100: 100%;
+  --w--90: 90%;
+  --w--80: 80%;
+  --max--100: 100%;
+
+  /* Alignment & Justfication */
+  --center: center;
+  --space--between: space-between;
+  --start: flex-start;
+  --flex: flex;
+  --block: block;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+  font-family: var(--montserrat);
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+menu {
+  list-style-type: none;
+}
+
+.active {
+  font-weight: 800;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-size: 4vw;
+  line-height: 1.4;
+  font-family:
+    'Montserrat',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 956px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
 }

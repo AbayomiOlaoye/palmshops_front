@@ -1,0 +1,126 @@
+.container {
+  background-color: var(--secondary-300);
+  border-radius: 0 0 4rem 0;
+  position: relative;
+
+  .hero {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 0 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--white);
+    background: url(../../images/home_bg.png) no-repeat center center/cover;
+
+    .heroLogo {
+      width: 25%;
+    }
+
+    .heroTitle {
+      font-size: 2rem;
+
+      .tint {
+        color: #c3ee00;
+      }
+    }
+
+    .option {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: justify;
+      align-items: center;
+      gap: 1rem;
+
+      .optionLink {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        background-color: var(--white);
+        border-radius: 10px;
+        height: 100px;
+        transition: all 0.2s ease-in;
+
+        &:active {
+          transform: scale(0.95);
+          opacity: 0.9;
+        }
+
+        .school {
+          color: #e84632;
+        }
+
+        .track {
+          color: #e8a909;
+        }
+
+        .store {
+          color: var(--primary-700);
+        }
+
+        .vest {
+          color: #5d6679;
+        }
+
+        .optionImg {
+          width: 50%;
+        }
+
+        .optionTitle {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .divider {
+      width: 30%;
+      background-color: #7ec670;
+      height: 1px;
+      margin-top: -14px;
+    }
+  }
+
+  .heroAction {
+    padding: 2rem 0 5rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .heroActionLink {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+      font-weight: 700;
+      background: var(--gradient);
+      padding: 0.75rem;
+      color: var(--primary-900);
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out; ;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .heroActionLinkB {
+      @extend .heroActionLink;
+      background: transparent;
+      border: 1px solid #7ec670;
+      color: #7ec670;
+    }
+
+  }
+}

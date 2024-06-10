@@ -1,0 +1,231 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+/************/
+header {
+  width: var(--w--100);
+  padding: 1rem 0;
+  background-color: rgba(52, 82, 46, 0.9);
+
+  .navBar {
+    display: var(--flex);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.75rem;
+    // margin: 0 auto;
+
+    .navPre {
+      @extend .navBar;
+      gap: 3rem;
+      padding: 0;
+      width: fit-content;
+
+      .exitMenu {
+        font-size: 3rem;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .mobileMenuIcon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--white);
+      }
+
+      .navLink {
+        display: var(--block);
+
+        .navLogo {
+          max-width: 95%;
+        }
+      }
+    }
+
+    .navLinksMob {
+      position: absolute;
+      top: 6rem;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      height: 500vh;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+
+      .navList {
+        background-color: var(--palm);
+        width: 50%;
+        height: 100%;
+        @extend .flexCol;
+        padding: 4rem 1.5rem;
+        gap: 1.5rem;
+        list-style-type: none;
+        font-weight: 700;
+
+        .navLinkItem {
+          color: var(--black);
+          font-size: 1.15rem;
+          transition: all ease-in-out 0.3s;
+
+          &:hover {
+            color: var(--text--dark);
+          }
+
+          &:active {
+            color: var(--menu);
+          }
+        }
+      }
+    }
+
+    .navLinks {
+      display: none;
+    }
+
+    .scroll {
+      position: fixed;
+      top: 90%;
+      left: 90%;
+      font-size: 6vw;
+      color: var(--palm);
+      opacity: 0.5;
+      transition: all ease-in-out 0.3s;
+      cursor: pointer;
+      z-index: 1000;
+
+      &:hover {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+    }
+
+    .signup {
+      width: 70%;
+      max-width: 200px;
+      padding: 1rem;
+      background-color: var(--primary-400);
+      color: var(--white);
+      font-weight: 500;
+      
+      border: none;
+      border-radius: 0.5rem;
+      transition: all ease-in-out 0.3s;
+
+      &:hover {
+        transform: scaleX(1.05);
+        opacity: 0.8;
+        color: #fff;
+      }
+    
+      &:active {
+        transform: scale(1.1);
+        opacity: 1;
+        color: #000;
+      }
+    }
+
+    // Min-width: 768px
+    @media screen and (min-width: 768px) {
+      // width: var(--w--80);
+
+      .button {
+        width: var(--w--80);
+        max-width: 180px;
+      }
+
+      .scroll {
+        top: 85%;
+      }
+    }
+
+    @media screen and (min-width: 956px) {
+      gap: 4rem;
+
+      .navPre {
+
+        .mobileMenuIcon {
+          display: none;
+        }
+  
+        .navLink {
+          display: var(--block);
+  
+          .navLogo {
+            width: 100%;
+          }
+        }
+      }
+
+      .navLinks {
+        display: block;
+
+        .navList {
+          display: var(--flex);
+          list-style-type: none;
+          gap: 2rem;
+
+          .navListItem {
+            .active {
+              font-weight: 800;
+            }
+
+            .navLinkItem {
+              display: block;
+              color: #fff;
+              transition: all ease-out 0.1s;
+
+              &:hover {
+                color: var(--palm);
+                font-weight: 600;
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 1024px) {}
+  }
+
+  @media screen and (min-width: 956px) {
+    transition: background-color 0.3s ease;
+
+    .scrolled {
+      position: fixed;
+      background-color: var(--text--green);
+    }
+  }
+}

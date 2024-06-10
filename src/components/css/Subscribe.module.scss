@@ -1,0 +1,63 @@
+.footerContact {
+  background-color: var(--secondary-300);
+  padding: 3rem 0 5rem;
+
+  .footerContactContent {
+    background-color: var(--primary-300);
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2rem;
+
+    .footerContactTitle {
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .footerContactForm {
+      position: relative;
+      
+      .footerContactInput {
+        width: 100%;
+        margin-bottom: 1rem;
+        border: none;
+        background: #fff;
+        height: 48px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        padding: 10px;
+
+        &::placeholder {
+          color: #706f62;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .footerContactButton {
+        background-color: var(--primary-300);
+        position: relative;
+        top: -57px;
+        left: 52px;
+        color: var(--white);
+        padding: 0.5rem;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: var(--primary-700);
+        }
+
+        &:active {
+          background-color: var(--primary-900);
+          transform: scale(0.95);
+        }
+      } 
+    }
+  }
+}

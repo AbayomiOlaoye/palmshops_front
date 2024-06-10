@@ -1,0 +1,135 @@
+// HomeSection
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+/************/
+
+.homeSection {
+  width: var(--w--90);
+  @extend .auto;
+  background-image: url('../../images/bg_cookies.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .homeAbout {
+
+    .homeAboutPre {
+      @extend .flexCol;
+      flex-direction: column-reverse;
+      text-align: center;
+
+      // .homeAboutImage {
+      //   // width: 80%;
+      //   // height: 50%;
+      // }
+
+      .homeAboutTitle {
+        padding-top: 6rem;
+        font-size: 5.5vw;
+        color: var(--primary-700);
+        text-shadow: 0 1px 4px var(--primary-900);
+        font-weight: 700;
+        margin: 0 auto;
+        max-width: 80%;
+
+        @media screen and (min-width: 768px) {
+          padding-top: 8rem;
+          font-size: 4vw;
+        }
+      }
+    }
+
+    .homeAboutText {
+      @extend .auto;
+      color: var(--gray-900);
+      padding-bottom: 4rem;
+      
+      .homeAboutTitle {
+        display: none;
+      }
+
+      .homeAboutDescription {
+        @extend .flexCol;
+        padding: 1rem;
+        gap: 0.25rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: var(--w--80);
+  }
+
+  @media screen and (min-width: 956px) {
+    width: 60%;
+
+    .homeAbout {
+      display: flex;
+      background-color: #fff;
+      // box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 80px;
+      margin-left: 3rem;
+      padding: 40px 40px 40px 150px;
+
+      .homeAboutPre {
+
+        .homeAboutImage {
+          // position: absolute;
+          max-width: 100%;
+          height: auto;
+        }
+
+        .homeAboutTitle {
+          display: none;
+        }
+      }
+
+      .homeAboutText {
+        
+        .homeAboutTitle {
+          display: unset;
+          color: var(--text--green)
+        }
+
+        .homeAboutDescription {
+          @extend .flexCol;
+          padding: 1rem;
+          gap: 0.25rem;
+        }
+      }
+    }
+  }
+}
