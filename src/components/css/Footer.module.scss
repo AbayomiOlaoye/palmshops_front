@@ -1,0 +1,148 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+/************/
+
+.footer {
+  width: 100%;
+  color: #fff;
+  background: var(--primary-800);
+  border-radius: 0 12rem 0 0;
+  padding: 0 1.5rem;
+
+  .footerAction {
+
+    .footerActionImage {
+      margin: 4rem auto 2rem;
+    }
+  }
+
+    .footerContactContent {
+
+      .footerContactMenu {
+        @extend .flexCol;
+        gap: 0.5rem;
+
+        .footerItem {
+          .footerLink {
+            color: var(--primary-500);
+            font-weight: 600;
+            transition: color ease-in-out 0.2s;
+
+            &:hover {
+              color: var(--palm);
+            }
+          }
+        }
+
+      }
+
+    }
+
+  .footerSocial {
+    margin: 2rem auto 0;
+    @extend .flexCol;
+    @extend .alignItemsCenter;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+
+    .footerSocialContent {
+      @extend .flexCol;
+      gap: 1rem;
+
+      .footerSocialLinks {
+        @extend .flex;
+        @extend .alignItemsCenter;
+        @extend .justContentCenter;
+        gap: 1rem;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .footerSocialLinkItem {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--primary-500);
+        border-radius: 50%;
+        @extend .flex;
+        @extend .alignItemsCenter;
+        @extend .justContentCenter;
+        transition: background-color ease-in-out 0.3s;
+
+        &:hover {
+          border: 1px solid var(--white);
+        }
+
+        .footerSocialLink {
+          color: var(--primary-500);
+          padding-top: 0.4rem;
+          transition: color ease-in-out 0.3s;
+
+          &:hover {
+            color: var(--palm);
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 956px) {
+      width: 85%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 956px) {
+
+    .footerAction {
+      flex-direction: row;
+      width: 85%;
+      margin: 5rem auto 0;
+      justify-content: space-between;
+      border-bottom: 1px solid #494949;
+      line-height: 0;
+
+      .footerActionImage {
+        margin: 3.5rem auto 0;
+      }
+
+      .footerActionContent {
+        justify-content: flex-end;
+        border-bottom: unset;
+      }
+    }
+  }
+}

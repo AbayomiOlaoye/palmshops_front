@@ -5,6 +5,7 @@ import styles from './Home.module.scss';
 import HeroPage from '../components/HeroPage';
 import Palm from '../components/Palm';
 import Subscribe from '../components/Subscribe';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <HeroPage />
       <Palm />
       <Subscribe />
+      <Footer />
     </div>
   );
 };
