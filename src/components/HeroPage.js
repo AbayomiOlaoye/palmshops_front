@@ -22,7 +22,7 @@ const HeroPage = () => {
           Many Possibilities
         </h1>
         <div className={styles.option}>
-          <Link to="/palmShool" className={styles.optionLink}>
+          <Link to="/palmSchool" className={styles.optionLink}>
             <img
               src={school}
               alt="PalmShops.com logo"

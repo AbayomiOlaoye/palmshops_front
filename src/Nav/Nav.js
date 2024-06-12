@@ -88,24 +88,29 @@ const Nav = () => {
               </Link>
             </li>
             <li className={styles.navListItem}>
-              <a href="#about" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                About
-              </a>
+              <Link to="palmSchool" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                Palm School
+              </Link>
             </li>
             <li className={styles.navListItem}>
-              <a href="#faqs" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                FAQs
-              </a>
+              <Link to="palmTrack" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                PalmTrack
+              </Link>
             </li>
             <li className={styles.navListItem}>
-              <a href="#contact" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                Contact
-              </a>
+              <Link to="palmStore" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                Palm Store
+              </Link>
+            </li>
+            <li className={styles.navListItem}>
+              <Link to="palmVest" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                PalmVest
+              </Link>
             </li>
           </ul>
         </div>
         <div className={styles.profile}>
-          <Link to="/signup" className={styles.signup}>
+          <Link to="/register" className={styles.signup}>
             Get Started
           </Link>
         </div>

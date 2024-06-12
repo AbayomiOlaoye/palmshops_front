@@ -1,0 +1,184 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+/************/
+
+.container {
+  @extend .flexCol;
+  height: 100%;
+  background: url('../../images/sign_bg.png'), var(--secondary-300);
+  background-repeat: no-repeat;
+  background-position: top center;
+  color: var(--gray-900);
+
+  .angle {
+    @extend .absolute;
+    top: 2rem;
+    left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    width: 20%;
+    margin: 0 auto;
+  }
+
+  .title {
+    z-index: 1000;
+    padding: 0 2rem;
+    text-align: center;
+    margin-top: 2rem;
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--primary-600);
+      font-weight: 600;
+    }
+
+    .desc {
+      max-width: 300px;
+      margin: 0.5rem auto 1rem;
+    }
+  }
+
+  .form {
+    @extend .relative;
+    @extend .flexCol;
+    width: 100%;
+    @extend .justContentCenter;
+    // gap: 0.5rem;
+    padding: 1rem 2rem 2rem;
+
+    .input {
+      border: 0.68px solid var(--primary-300);
+      height: 48px;
+      background: var(--white);
+      border-radius: 10px;
+      padding: 0 1rem 0 2.5rem;
+      color: var(--primary-900);
+      caret-color: var(--primary-900);
+      
+      &::placeholder {
+        color: var(--gray-900);
+      }
+
+      &:focus {
+        border: 0.68px solid var(--gray-900);
+        outline: none;
+      }
+    }
+
+    .icon {
+      @extend .relative;
+      top: -34px;
+      left: 10px;
+      width: 10%;
+    }
+
+    .btn {
+      background: var(--gradient);
+      color: var(--white);
+      @extend .flex;
+      @extend .alignItemsCenter;
+      @extend .justContentCenter;
+      gap: 0.5rem;
+      border: none;
+      margin-top: 0.25rem;
+      height: 48px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:active {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+    }
+
+    .link {
+      align-self: center;
+      margin-top: 0.5rem;
+
+      a {
+        color: var(--primary-600);
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:hover {
+          color: var(--gray-900);
+        }
+      }
+    }
+
+    // @media screen and (min-width: 768px) {
+    //   width: 60%;
+    //   margin: 0 auto;
+    //   justify-content: center;
+    //   padding-top: 5rem;
+    //   background-color: var(--darkGreen);
+    // }
+  }
+
+  // @media screen and (min-width: 768px) {
+  //   flex-direction: row;
+  //   margin: 0 auto;
+  //   .title {
+  //     color: white;
+  //     padding: 0 2rem;
+  //     font-family: var(--rale);
+  //     text-align: center;
+  //     margin: auto 0;
+  //   }
+
+
+  // .lift {
+  //   position: unset;
+  //   top: unset;
+  // }
+// }
+}
