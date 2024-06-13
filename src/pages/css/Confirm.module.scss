@@ -50,7 +50,7 @@
 
 .container {
   @extend .flexCol;
-  height: 100%;
+  min-height: 100vh;
   background: url('../../images/sign_bg.png'), var(--secondary-300);
   background-repeat: no-repeat;
   background-position: top center;
@@ -120,26 +120,6 @@
       width: 10%;
     }
 
-    .btn {
-      background: var(--gradient);
-      color: var(--white);
-      @extend .flex;
-      @extend .alignItemsCenter;
-      @extend .justContentCenter;
-      gap: 0.5rem;
-      border: none;
-      margin-top: 0.25rem;
-      height: 48px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-
-      &:active {
-        transform: scale(0.95);
-        opacity: 0.8;
-      }
-    }
-
     .link {
       align-self: center;
       margin-top: 0.5rem;
@@ -162,6 +142,27 @@
     //   padding-top: 5rem;
     //   background-color: var(--darkGreen);
     // }
+  }
+
+  .btn {
+    background: var(--gradient);
+    color: var(--white);
+    @extend .flex;
+    @extend .alignItemsCenter;
+    @extend .justContentCenter;
+    gap: 0.5rem;
+    border: none;
+    margin: 2rem auto 0;
+    width: 70%;
+    height: 48px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:active {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
   }
 
   // @media screen and (min-width: 768px) {

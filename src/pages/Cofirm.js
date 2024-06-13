@@ -34,11 +34,7 @@ const Confirm = () => {
 
   // const dispatch = useDispatch();
 
-  const [otp, setOtp] = useState('');
-
-  const handleChange = () => {
-    setOtp(otp);
-  };
+  const [otp, setOtp] = useState(['*', '*', '*', '*', '*', '*']);
 
   return (
     <section className={styles.container}>
@@ -51,10 +47,20 @@ const Confirm = () => {
           in the boxes below
         </p>
         <OtpInput
-          value={otp}
-          onChange={handleChange}
+          value={otp.join('')}
+          onChange={(value) => setOtp(value.split(''))}
           numInputs={6}
           renderSeparator={<span />}
+          placeholder="*"
+          inputStyle={{
+            width: '3rem',
+            height: '3rem',
+            margin: '0 0.2rem',
+            fontSize: '1.5rem',
+            borderRadius: '4px',
+            border: '1px solid #ced4da',
+          }}
+          isInputNum
           renderInput={(props) => <input {...props} />}
         />
         <button type="submit" className={styles.btn} disabled={loading}>
