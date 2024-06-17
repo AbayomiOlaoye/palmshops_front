@@ -1,6 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './css/HeroPage.module.scss';
 import logoImg from '../images/logo/logo_img.svg';
 import school from '../images/school.png';
@@ -8,7 +9,7 @@ import track from '../images/tracks.png';
 import store from '../images/store.png';
 import vest from '../images/vest.png';
 
-const HeroPage = () => {
+const HeroPage = ({ auth }) => {
   return (
     <section className={styles.container}>
       <div className={styles.hero}>
@@ -61,16 +62,24 @@ const HeroPage = () => {
         </p>
         <div className={styles.divider} />
       </div>
-      <div className={styles.heroAction}>
-        <Link to="/register" className={styles.heroActionLink}>
-          Create Account
-        </Link>
-        <Link to="/login" className={styles.heroActionLinkB}>
-          Login
-        </Link>
-      </div>
+      {
+        !auth && (
+          <div className={styles.heroAction}>
+            <Link to="/register" className={styles.heroActionLink}>
+              Create Account
+            </Link>
+            <Link to="/login" className={styles.heroActionLinkB}>
+              Login
+            </Link>
+          </div>
+        )
+      }
     </section>
   );
+};
+
+HeroPage.propTypes = {
+  auth: PropTypes.bool.isRequired,
 };
 
 export default HeroPage;

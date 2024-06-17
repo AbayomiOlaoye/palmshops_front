@@ -8,10 +8,12 @@ import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  const auth = true;
+
   return (
     <div className={styles.container}>
-      <Nav />
-      <HeroPage />
+      <Nav auth={auth} />
+      <HeroPage auth={auth} />
       <Palm />
       <Subscribe />
       <Footer />

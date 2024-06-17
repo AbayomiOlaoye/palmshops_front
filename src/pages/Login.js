@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';
-import { ImSpinner3 } from 'react-icons/im';
-import { MdKeyboardBackspace, MdOutlineMail } from 'react-icons/md';
-import { FaRegUser, FaArrowRight } from 'react-icons/fa6';
+import { MdKeyboardBackspace } from 'react-icons/md';
 import { FiPhone } from 'react-icons/fi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import styles from './css/SignUp.module.scss';
+import styles from './css/Login.module.scss';
 import logo from '../images/logo/logo_img.svg';
 // import { registerUser } from '../redux/reducer/authActions';
 
-const SignUp = () => {
+const Login = () => {
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -34,10 +32,7 @@ const SignUp = () => {
   // const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
     phone: '',
-    confirmPass: '',
     password: '',
   });
 
@@ -52,7 +47,7 @@ const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (success) {
-      navigate('/confirm-phone');
+      navigate('/');
     }
   };
   return (
@@ -60,23 +55,10 @@ const SignUp = () => {
       <MdKeyboardBackspace className={styles.angle} onClick={handleBackClick} />
       <img src={logo} alt="PalmShops.com logo" className={styles.logo} />
       <article className={styles.title}>
-        <h1 className={styles.subtitle}>Create Account</h1>
-        <p className={styles.desc}>To have access to 100% of our features</p>
+        <h1 className={styles.subtitle}>Login</h1>
+        <p className={styles.desc}>Welcome back</p>
       </article>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          className={styles.input}
-          placeholder="Full name"
-          onChange={(event) => handleInputChange(event)}
-          value={formData.name}
-          required
-        />
-        <span className={styles.icon}>
-          <FaRegUser className={styles.svg} />
-        </span>
         <input
           type="tel"
           id="phone"
@@ -89,19 +71,6 @@ const SignUp = () => {
         />
         <span className={styles.icon}>
           <FiPhone className={styles.svg} />
-        </span>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className={styles.input}
-          placeholder="Email address"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <span className={styles.icon}>
-          <MdOutlineMail className={styles.svg} />
         </span>
         <input
           type="password"
@@ -117,30 +86,16 @@ const SignUp = () => {
         <span className={styles.icon}>
           <RiLockPasswordLine className={styles.svg} />
         </span>
-        <input
-          type="password"
-          id="confirmPass"
-          name="confirmPass"
-          className={styles.input}
-          placeholder="Confirm Password"
-          value={formData.confirmPass}
-          onChange={handleInputChange}
-          required
-        />
-        <span className={styles.icon}>
-          <RiLockPasswordLine className={styles.svg} />
-        </span>
         <button type="submit" className={styles.btn} disabled={loading}>
-          Sign Up
-          { loading ? <ImSpinner3 className={styles.spinner} /> : <FaArrowRight /> }
+          Login
         </button>
         <p className={styles.link}>
-          Already have an account?
-          <Link to="/login"> Login</Link>
+          New here?
+          <Link to="/register"> Create Account</Link>
         </p>
       </form>
     </section>
   );
 };
 
-export default SignUp;
+export default Login;

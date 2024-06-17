@@ -9,7 +9,7 @@ import UnAuth from './UnAuth';
 
 const Layout = () => {
   // const isAuth = useSelector((state) => state.auth.isAuthenticated);
-  const isAuth = false;
+  const isAuth = true;
   return (
     <BrowserRouter>
       <ToastContainer theme="colored" position="bottom-center" />

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState, useEffect } from 'react';
@@ -34,7 +35,12 @@ const Confirm = () => {
 
   // const dispatch = useDispatch();
 
-  const [otp, setOtp] = useState(['*', '*', '*', '*', '*', '*']);
+  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+
+  const handleOTPVerification = () => {
+    const enteredOTP = otp.join('');
+    console.log(enteredOTP);
+  };
 
   return (
     <section className={styles.container}>
@@ -51,22 +57,31 @@ const Confirm = () => {
           onChange={(value) => setOtp(value.split(''))}
           numInputs={6}
           renderSeparator={<span />}
-          placeholder="*"
+          placeholder="******"
+          containerStyle={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '2rem',
+          }}
           inputStyle={{
             width: '3rem',
             height: '3rem',
-            margin: '0 0.2rem',
+            margin: '0 0.1rem',
             fontSize: '1.5rem',
             borderRadius: '4px',
             border: '1px solid #ced4da',
           }}
           isInputNum
-          renderInput={(props) => <input {...props} />}
+          renderInput={(props, index) => <input {...props} key={index} />}
         />
-        <button type="submit" className={styles.btn} disabled={loading}>
+        <button type="submit" onClick={handleOTPVerification} className={styles.btn} disabled={loading}>
           Verify
           { loading ? <ImSpinner3 className={styles.spinner} /> : <FaArrowRight /> }
         </button>
+        <p className={styles.link}>
+          Didn&apos;t get the code?
+          <Link to="#">Resend Code</Link>
+        </p>
       </article>
       {success && (
       <article className={styles.success}>

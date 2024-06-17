@@ -9,13 +9,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link, Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { MdMenu } from 'react-icons/md';
 import styles from './Nav.module.scss';
 import palmshops from '../images/logo/logo_text.svg';
 /* eslint-disable react/jsx-boolean-value */
 
 // eslint-disable-next-line react/prop-types
-const Nav = () => {
+const Nav = ({ auth }) => {
   useEffect(() => {
     AOS.init({
       duration: 400,
@@ -63,19 +64,24 @@ const Nav = () => {
                 </Link>
               </li>
               <li className={styles.navListItem}>
-                <a href="#about" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                  About
-                </a>
+                <Link to="palmSchool" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Palm School
+                </Link>
               </li>
               <li className={styles.navListItem}>
-                <a href="#faqs" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                  FAQs
-                </a>
+                <Link to="palmTrack" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  PalmTrack
+                </Link>
               </li>
               <li className={styles.navListItem}>
-                <a href="#contact" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                  Contact
-                </a>
+                <Link to="palmStore" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Palm Store
+                </Link>
+              </li>
+              <li className={styles.navListItem}>
+                <Link to="palmVest" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  PalmVest
+                </Link>
               </li>
             </ul>
           </div>
@@ -110,15 +116,25 @@ const Nav = () => {
           </ul>
         </div>
         <div className={styles.profile}>
-          <Link to="/register" className={styles.signup}>
-            Get Started
-          </Link>
+          {auth ? (
+            <Link to="profile" className={styles.profileLink}>
+              Profile
+            </Link>
+          ) : (
+            <Link to="/register" className={styles.signup}>
+              Get Started
+            </Link>
+          )}
         </div>
       </nav>
 
       <Outlet />
     </header>
   );
+};
+
+Nav.propTypes = {
+  auth: PropTypes.bool.isRequired,
 };
 
 export default Nav;
