@@ -1,21 +1,30 @@
-Copy
-.mediaPoster {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
+.videoContainer {
+  padding: 0 1rem 1rem;
+  .videoDiv {
+    border-radius: 10px;
+    width: 100%;
 
-.mediaPoster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .video {
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
 
-.mediaPoster[data-visible] {
-  opacity: 1;
+  .videoTime {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .videoSubtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text--grey);
+    }
+  }
 }

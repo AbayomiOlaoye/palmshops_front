@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+  background-color: var(--secondary-300);
+  min-height: 100vh;
+
+  .div {
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    .title {
+      color: var(--primary-500);
+      font-size: 1.5rem;
+    }
+  }
+
+  .courses {
+    background-color: var(--white);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 40px 40px 0 0;
+
+    .courseTitle {
+      margin-bottom: 1rem;
+      color: var(--text--grey);
+    }
+
+    .courseDiv {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+
+      .course {
+        position: relative;
+        width: 100%;
+        border: none;
+        height: 200px;
+        text-align: left;
+        background-color: var(--white);
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 5px 6px 24px -14px rgba(0,0,0,1);
+        -webkit-box-shadow: 5px 6px 24px -14px rgba(0,0,0,1);
+        -moz-box-shadow: 5px 6px 24px -14px rgba(0,0,0,1);
+
+        .courseId {
+          position: absolute;
+          top: 0.5rem;
+          left: 0.5rem;
+          color: white;
+        }
+
+        .img {
+          width: 100%;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 10px 10px 0 0;
+        }
+
+        .courseName {
+          padding: 0.25rem 0.5rem;
+        }
+
+        .courseStar {
+          padding-left: 0.5rem;
+
+          .filledStar {
+            color: orange;
+          }
+          
+          .lightStar {
+            color: var(--secondary-300);
+          }
+        }
+      }
+    }
+  }
+
+  .courseDetails {
+    position: absolute;
+  }
+}

@@ -9,24 +9,37 @@ import styles from './css/VideoPlayer.module.scss';
 
 const VideoPlayer = () => {
   return (
-    <section>
-      <div className={styles.title}>
-        <h1 className={styles.title}>Welcome to PalmSchool</h1>
-        <p className={styles.subtitle}>Watch the introductory video below!</p>
+    <Media className={styles.videoContainer}>
+      <Video
+        loading="visible"
+        poster="https://files.vidstack.io/sprite-fight/poster.webp"
+        controls
+        preload="true"
+        className={styles.videoDiv}
+      >
+        <video
+          loading="visible"
+          poster="https://files.vidstack.io/sprite-fight/poster.webp"
+          src="https://files.vidstack.io/sprite-fight/720p.mp4"
+          preload="none"
+          data-video="0"
+          className={styles.video}
+          controls
+        />
+      </Video>
+      <div className={styles.videoTime}>
+        <p className={styles.currentTime}>00:00</p>
+        |
+        <p className={styles.duration}>05:00</p>
       </div>
-      <Media>
-        <Video loading="visible" poster="https://files.vidstack.io/sprite-fight/poster.webp" controls preload="true">
-          <video
-            loading="visible"
-            poster="https://files.vidstack.io/sprite-fight/poster.webp"
-            src="https://files.vidstack.io/sprite-fight/720p.mp4"
-            preload="none"
-            data-video="0"
-            controls
-          />
-        </Video>
-      </Media>
-    </section>
+      <article className={styles.videoSubtitle}>
+        <h2 className={styles.subtitle}>Subtitle</h2>
+        <p className={styles.videoSubtitleText}>
+          Subtitle texobt uhieheifiehiofiefieigoes here8ode duiyeg8deihdoe ejdeuigedged ejedivdev
+          eigdiegieodjeode chheohof coeioenr fmrjfof iedjihjjkljcbkr ioebffjlkf
+        </p>
+      </article>
+    </Media>
   );
 };
 

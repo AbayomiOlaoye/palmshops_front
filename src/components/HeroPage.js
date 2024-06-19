@@ -10,6 +10,8 @@ import store from '../images/store.png';
 import vest from '../images/vest.png';
 
 const HeroPage = ({ auth }) => {
+  console.log(auth);
+
   return (
     <section className={styles.container}>
       <div className={styles.hero}>

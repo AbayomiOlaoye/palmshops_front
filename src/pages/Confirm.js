@@ -30,8 +30,8 @@ const Confirm = () => {
   };
 
   const {
-    loading, success,
-  } = useState({ loading: false, success: false });
+    loading,
+  } = useState({ loading: false });
 
   // const dispatch = useDispatch();
 
@@ -40,6 +40,7 @@ const Confirm = () => {
   const handleOTPVerification = () => {
     const enteredOTP = otp.join('');
     console.log(enteredOTP);
+    navigate('/login');
   };
 
   return (
@@ -83,18 +84,6 @@ const Confirm = () => {
           <Link to="#">Resend Code</Link>
         </p>
       </article>
-      {success && (
-      <article className={styles.success}>
-        <iframe
-          src="https://lottie.host/embed/6bc5cd40-a59b-4dae-a8b4-89bedc2cb175/aVQdT5lnd1.json"
-          title="Successful Registration"
-          border="none"
-        />
-        <p>
-          <Link to="/Login">Now let&apos;s Login</Link>
-        </p>
-      </article>
-      )}
     </section>
   );
 };
